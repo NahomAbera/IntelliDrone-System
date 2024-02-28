@@ -46,7 +46,7 @@ def KeyBoardInput():
         YV = -speed
 
     if kbc.getKey("r"):
-        cv2.imwrite(f'Images/{time.time()}.jpg', strm)
+        cv2.imwrite(f'Snapshots/{time.time()}.jpg', strm)
         time.sleep(0.3)
 
     return [LeftRight, ForwardBackward, UpDown, YV]

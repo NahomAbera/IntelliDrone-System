@@ -8,6 +8,6 @@ print(drn.get_battery())
 drn.streamon()
 
 while True:
-    img = drn.get_frame_read().frame
-    cv2.imshow("Image", img)
+    strm = drn.get_frame_read().frame
+    cv2.imshow("Snapshots", strm)
     cv2.waitKey(1)
