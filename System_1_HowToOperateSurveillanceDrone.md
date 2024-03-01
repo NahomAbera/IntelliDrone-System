@@ -3,7 +3,7 @@
 1. Turn on the drone
 2. Connect your computer wifi with the drone
 3. Run the System_1_SurveillanceDrone.py file either using an IDE or using your terminal/command line
-4. You'll have to windows on you screen, 
+4. You'll have 2 windows on you screen, 
    1. The pygame dark screen - use this screen to operate the drone by pressing the dark screen and then pressing the commands below.
    2. The OpenCV screen - this screen will provide a live stream from the drone's camera
 
