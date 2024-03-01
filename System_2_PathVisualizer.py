@@ -88,7 +88,8 @@ def KeyBoardInput():
 
 def draw(mapping, coordinates):
     for coordinate in coordinates:
-        cv2.circle(mapping, coordinate, 5, (0,0,255), cv2.FILLED)
+        cv2.circle(mapping, coordinate, 5, (230, 126, 173), cv2.FILLED)
+    cv2.circle(mapping, coordinates[-1], 10, (255, 255, 255), cv2.FILLED)
     cv2.putText(mapping, f'({(coordinates[-1][0] - 500) / 100}, {(coordinates[-1][1] - 500) / 100}) meters', (coordinates[-1][0] - 10, coordinates[-1][1] + 30), cv2.FONT_HERSHEY_PLAIN, 1, (255,0,255),1)
 
 while True:
@@ -96,11 +97,11 @@ while True:
     drn.send_rc_control(val[0], val[1], val[2], val[3])
 
     mapping = np.zeros((1000,1000,3), np.uint8)
-    # mapping = cv2.resize(mapping, (480, 480))
+    mapping = cv2.resize(mapping, (800, 800))
     if coordinates[-1][0] != val[4] or coordinates[-1][1] != val[5]:
         coordinates.append((val[4], val[5]))
 
     draw(mapping, coordinates)
 
-    cv2.imshow("Path Vizulaizer", mapping)
+    cv2.imshow("Path Visualizer", mapping)
     cv2.waitKey(1)
